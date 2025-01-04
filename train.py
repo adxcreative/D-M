@@ -18,7 +18,7 @@ import torch.backends.cudnn as cudnn
 import shutil
 
 from model import DM
-from train_util import train_epoch, evaluate_vdsfx, evaluate_kmd
+from train_util import train_epoch, evaluate_vdsfx
 from load_data import get_traindata, get_valdata, VDSFX_Dataset
 from params import parse_args
 from util import cosine_lr
@@ -113,23 +113,6 @@ def main():
     shutil.copyfile(os.path.join(args.train_model_base, f"model_{best_id}.pth"), args.train_model_path)
     print("Train Done!")
 
-    # test
-    test_model = DM(args.frame_dim, args.text_dim, args.ast_dim, args.hidden_dim,
-                    args.encoder_layer_num, args.decoder_layer_num, args.head_num, args.att_dim,
-                    args.att_dropout, args.ffn_dropout, args.query_num)
-    test_model.load_state_dict(torch.load(args.train_model_path))
-    test_model.cuda(args.local_device_rank)
-    test_model = torch.nn.parallel.DistributedDataParallel(test_model, device_ids=[args.local_device_rank])
-    test_dataset = VDSFX_Dataset(args.sfx_path, args.sfx_text_feat_path, args.sfx_ast_feat_path,
-                                 args.test_key_moment_path, args.test_video_name_txt,
-                                 args.test_tts_base, args.test_asr_base,
-                                 args.test_frame_feat_base, args.test_tts_feat_base, args.test_asr_feat_base,
-                                 args.notext_np, args.query_num, args.nega_num, args.limit_frame_num,
-                                 'val')
-    test_data = get_valdata(args, test_dataset, False)
-    _ = evaluate_vdsfx(test_model, test_data, test_dataset, args)
-    _ = evaluate_kmd(test_model, test_data, test_dataset, args)
-    print("Test Done!")
 
 if __name__ == "__main__":
     main()
