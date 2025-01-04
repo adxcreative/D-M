@@ -119,7 +119,7 @@ If you find our method useful in your work, please cite:
 
 ## Contact
 
-If you have any questions, please raise an issue or contact us at Ruixiang Zhao ([liujingyu2023@ruc.edu.cn](mailto:liujingyu2023@ruc.edu.cn))
+If you have any questions, please raise an issue or contact us at Jingyu Liu ([liujingyu2023@ruc.edu.cn](mailto:liujingyu2023@ruc.edu.cn))
 
 ## LICENSE
 
