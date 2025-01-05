@@ -1,6 +1,6 @@
 # D&M: Enriching E-commerce Videos with Sound Effects by Key Moment Detection and SFX Matching
 
-The official source code of our AAAI24 paper "[D&M: Enriching E-commerce Videos with Sound Effects by Key Moment Detection and SFX Matching](https://arxiv.org/abs/2408.13226)".
+The official source code of our AAAI25 paper "[D&M: Enriching E-commerce Videos with Sound Effects by Key Moment Detection and SFX Matching](https://arxiv.org/abs/2408.13226)".
 
 ![](./images/D&M.png)
 
