@@ -109,11 +109,11 @@ Codes are based on resources from [Chinese-CLIP](https://github.com/OFA-Sys/Chin
 If you find our method useful in your work, please cite:
 
 ```python
-@article{liu2024d,
-  title={D&M: Enriching E-commerce Videos with Sound Effects by Key Moment Detection and SFX Matching},
-  author={Liu, Jingyu and Wang, Minquan and Ma, Ye and Wang, Bo and Chen, Aozhu and Chen, Quan and Jiang, Peng and Li, Xirong},
-  journal={arXiv preprint arXiv:2408.13226},
-  year={2024}
+@inproceedings{liu2024d,
+  title ={D&M: Enriching E-commerce Videos with Sound Effects by Key Moment Detection and SFX Matching},
+  author ={Liu, Jingyu and Wang, Minquan and Ma, Ye and Wang, Bo and Chen, Aozhu and Chen, Quan and Jiang, Peng and Li, Xirong},
+  booktitle ={Proceedings of the AAAI Conference on Artificial Intelligence(AAAI)},
+  year={2025}
 }
 ```
 
